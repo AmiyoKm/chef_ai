@@ -12,9 +12,8 @@ export async function GenerateRecipes(input : string){
     }
 
     const response   =await generateRecipesByAI(input)
-    console.log(response);
     
-    const recipes : recipe[]= response.recipes.map((recipe: any) => ({
+    const recipes : recipe[]= response.recipes.map((recipe :any) => ({
         userId,
         title: recipe.title,
         ingredients: recipe.ingredients,

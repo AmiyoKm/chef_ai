@@ -30,7 +30,7 @@ export async function FavoriteTagsData(){
     }
     const allTags = recipes.flatMap((recipe : recipe) => recipe.tags.split(", "))
 
-    const tagsCount : Record<string , number> = allTags.reduce((acc: acc ,tag)=> {
+    const tagsCount : Record<string , number> = allTags.reduce((acc: acc ,tag : string)=> {
         acc[tag] = (acc[tag] || 0) +1
         return acc
     },{} as Record<string , number>)
@@ -39,7 +39,7 @@ export async function FavoriteTagsData(){
 
     return {
         mostFrequentTag: sortedTags[0], 
-        allTagCounts: Object.entries(tagsCount).reduce((acc ,tag)=> acc+tag[1] ,0)
+        allTagCounts: Object.entries(tagsCount).reduce((acc : number ,tag : [string,number])=> acc+tag[1] ,0)
     }
 
 }
