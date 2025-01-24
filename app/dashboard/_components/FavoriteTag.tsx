@@ -21,7 +21,7 @@ const FavoriteTags = () => {
         </CardHeader>
         <CardContent>
             <div className='flex-1 h-full'>
-                <p className='font-semibold text-lg'>Total tags : <ReactCountupWrapper value={query.data?.allTagCounts!} /></p>
+                <p className='font-semibold text-lg'>Total tags : <ReactCountupWrapper value={query.data?.allTagCounts ?? 0} /></p>
             </div>
         </CardContent>
     </Card>

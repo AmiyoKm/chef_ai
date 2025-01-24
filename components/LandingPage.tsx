@@ -19,7 +19,7 @@ const Hero12 = () => {
                 Your Recipe Assistant.
               </h1>
               <p className="text-muted-foreground lg:text-xl">
-              ChefAI is an intelligent recipe generator that helps you turn everyday ingredients into delicious meals with the power of AI. Simply enter the ingredients you have at home, and ChefAI will suggest creative, easy-to-follow recipes tailored to your preferences. Whether you're looking for quick dinner ideas, healthy meal options, or just experimenting in the kitchen, ChefAI has you covered.
+              ChefAI is an intelligent recipe generator that helps you turn everyday ingredients into delicious meals with the power of AI. Simply enter the ingredients you have at home, and ChefAI will suggest creative, easy-to-follow recipes tailored to your preferences. Whether you&apos;re looking for quick dinner ideas, healthy meal options, or just experimenting in the kitchen, ChefAI has you covered.
               </p>
             </div>
             <div className="mt-4 flex justify-center gap-2">

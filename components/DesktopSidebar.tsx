@@ -11,7 +11,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { Brain, Cpu, History, Home, MessageSquareCode, Settings2, User } from "lucide-react";
+import {  Cpu, History, Home, MessageSquareCode,  } from "lucide-react";
 import Logo from "./Logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";

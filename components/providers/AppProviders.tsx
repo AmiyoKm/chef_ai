@@ -1,6 +1,6 @@
 "use client"
 import React, { ReactNode, useState } from 'react'
-import { SidebarProvider, SidebarTrigger } from '../ui/sidebar'
+import { SidebarProvider } from '../ui/sidebar'
 import DesktopSidebar from '../DesktopSidebar'
 import {QueryClient , QueryClientProvider} from "@tanstack/react-query"
 import NextTopLoader from 'nextjs-toploader'

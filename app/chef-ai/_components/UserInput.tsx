@@ -25,11 +25,9 @@ const UserInput = () => {
     <div className='w-1/2 h-auto space-y-4' >
       {
         recipes && (
-          recipes.map((recipe)=>(
-              
-
-
-                  <RecipeCard recipe={recipe} />
+          recipes.map((recipe, i)=>(
+            
+                  <RecipeCard key={i} recipe={recipe} />
 
               
           ))

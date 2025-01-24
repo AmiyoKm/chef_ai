@@ -9,7 +9,7 @@ const Greeting = () => {
     <>
       {showText && (
         <>
-          <h1 className="text-4xl">Hi, I'm Chef AI.</h1>
+          <h1 className="text-4xl">Hi, I&apos;m Chef AI.</h1>
           <h1 className="text-muted-foreground">
             <Typewriter
               options={{
