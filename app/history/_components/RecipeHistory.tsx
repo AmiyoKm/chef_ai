@@ -3,6 +3,7 @@ import { GetAllRecipe } from '@/actions/GetAllRecipe'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { recipe } from '@/prisma/generated/client'
 import { useQuery } from '@tanstack/react-query'
 import { Bolt, Flame, Utensils } from 'lucide-react'
 import React from 'react'
@@ -37,7 +38,7 @@ const RecipeHistory = () => {
   return (
     <Accordion type='single' collapsible className='w-full'>
         {
-            query.data?.map((recipe)=>(
+            query.data?.map((recipe : recipe)=>(
                 <AccordionItem value={recipe.id} key={recipe.id}>
                     <AccordionTrigger className='text-left  flex'>
                         <div className='flex flex-col items-start grow'>
