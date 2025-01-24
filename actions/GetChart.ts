@@ -30,7 +30,7 @@ export async function GetChart() {
             return null
         }
         const recipeCount : Record<string,number> = {}
-        recipeDates.forEach((recipeDate)=>{
+        recipeDates.forEach((recipeDate : {date : Date})=>{
             const day = format(recipeDate.date, "MMM-d").replace("-"," ")
             recipeCount[day] = (recipeCount[day] || 0) +1
         })

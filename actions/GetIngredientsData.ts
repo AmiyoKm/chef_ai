@@ -20,8 +20,8 @@ export async function GetIngredientsData(){
     })
     if(!ingredients) return 0
     let count = 0
-      ingredients.forEach((ingredient)=> {
-        ingredient.ingredients.split(", ").forEach((i,index)=> {
+      ingredients.forEach((ingredient : { ingredients: string})=> {
+        ingredient.ingredients.split(", ").forEach(()=> {
             count ++
         })
     })
