@@ -24,11 +24,3 @@ model recipe {
   date        DateTime @default(now())
 }
 
-model Chat {
-  id           String @id @default(cuid())
-  userId       String
-  title        String
-  content      String
-  date        DateTime @default(now())
-  
-}

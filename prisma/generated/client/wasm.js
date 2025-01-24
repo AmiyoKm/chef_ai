@@ -129,14 +129,6 @@ exports.Prisma.RecipeScalarFieldEnum = {
   date: 'date'
 };
 
-exports.Prisma.ChatScalarFieldEnum = {
-  id: 'id',
-  userId: 'userId',
-  title: 'title',
-  content: 'content',
-  date: 'date'
-};
-
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -154,8 +146,7 @@ exports.Prisma.NullsOrder = {
 
 
 exports.Prisma.ModelName = {
-  recipe: 'recipe',
-  Chat: 'Chat'
+  recipe: 'recipe'
 };
 
 /**
