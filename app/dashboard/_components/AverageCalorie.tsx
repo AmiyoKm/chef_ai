@@ -1,9 +1,8 @@
 "use client"
-import { GetAllRecipeCount } from '@/actions/GetAllRecipeCount'
 import { useQuery } from '@tanstack/react-query'
 import React from 'react'
 import DashboardCard from './DashboardCard'
-import { CookingPot, Flame } from 'lucide-react'
+import { Flame } from 'lucide-react'
 import { AverageCalorie } from '@/actions/AverageCalorie'
 
 const AverageCalorieCard = () => {

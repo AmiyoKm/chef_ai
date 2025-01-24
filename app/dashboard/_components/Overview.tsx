@@ -2,7 +2,6 @@
 import React from 'react'
 
 import { useQuery } from '@tanstack/react-query'
-import { GetAllRecipe } from '@/actions/GetAllRecipe'
 import { GetChart } from '@/actions/GetChart'
 import { ChartConfig, ChartContainer, ChartLegend, ChartLegendContent, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart'
 import { Bar, BarChart, CartesianGrid, XAxis } from 'recharts'

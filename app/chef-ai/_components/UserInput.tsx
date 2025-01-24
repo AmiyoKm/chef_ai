@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { useMutation } from '@tanstack/react-query'
 import { Loader2Icon } from 'lucide-react'
-import React, { Suspense,  useState } from 'react'
+import React, {   useState } from 'react'
 import RecipeCard from './RecipeCard'
 import useStore from '@/store/store'
 

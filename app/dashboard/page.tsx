@@ -4,7 +4,6 @@ import IngredientDataCrd from './_components/IngredientDataCrd'
 import FavoriteTags from './_components/FavoriteTag'
 import AverageCalorieCard from './_components/AverageCalorie'
 import Overview from './_components/Overview'
-import { getMonth } from 'date-fns'
 const Dashboard = () => {
   const now = new Date().toLocaleDateString("en-Us",{
     month : "long"

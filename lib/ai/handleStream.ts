@@ -2,8 +2,8 @@
 
 export const handleStream = async (prompt: string) => {
     // Construct the absolute URL
-    const baseUrl = 'http://localhost:3000'
-    const url = `${baseUrl}/api/chat`
+    
+    const url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/chat`
 
     const response = await fetch(url, {
         method: 'POST',

@@ -1,7 +1,7 @@
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Egg, EggFriedIcon, Flame, Utensils } from 'lucide-react'
+import { Egg, Flame, Utensils } from 'lucide-react'
 import React  from 'react'
 interface RecipeProps {
     id : string

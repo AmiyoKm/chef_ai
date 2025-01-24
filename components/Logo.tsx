@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils'
-import { ChefHatIcon, Cpu, HexagonIcon } from 'lucide-react'
+import {  Cpu } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 

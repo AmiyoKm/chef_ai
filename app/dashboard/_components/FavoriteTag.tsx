@@ -1,9 +1,7 @@
 "use client"
-import { GetAllRecipeCount } from '@/actions/GetAllRecipeCount'
 import { useQuery } from '@tanstack/react-query'
 import React from 'react'
-import DashboardCard from './DashboardCard'
-import { CookingPot, Star } from 'lucide-react'
+import {  Star } from 'lucide-react'
 import { FavoriteTagsData } from '@/actions/FavoriteTagsData'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import ReactCountupWrapper from '@/components/ReactCountupWrapper'
