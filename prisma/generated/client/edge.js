@@ -82,6 +82,9 @@ Prisma.NullTypes = {
  * Enums
  */
 exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
+  ReadUncommitted: 'ReadUncommitted',
+  ReadCommitted: 'ReadCommitted',
+  RepeatableRead: 'RepeatableRead',
   Serializable: 'Serializable'
 });
 
@@ -108,6 +111,11 @@ exports.Prisma.ChatScalarFieldEnum = {
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
+};
+
+exports.Prisma.QueryMode = {
+  default: 'default',
+  insensitive: 'insensitive'
 };
 
 exports.Prisma.NullsOrder = {
@@ -149,7 +157,7 @@ const config = {
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": "../../../.env",
+    "rootEnvPath": null,
     "schemaEnvPath": "../../../.env"
   },
   "relativePath": "../..",
@@ -158,8 +166,7 @@ const config = {
   "datasourceNames": [
     "db"
   ],
-  "activeProvider": "sqlite",
-  "postinstall": false,
+  "activeProvider": "postgresql",
   "inlineDatasources": {
     "db": {
       "url": {
@@ -168,8 +175,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"./generated/client\"\n}\n\ndatasource db {\n  provider  = \"sqlite\"\n  url       = env(\"POSTGRES_PRISMA_URL\")\n  directUrl = env(\"POSTGRES_URL_NON_POOLING\")\n}\n\nmodel recipe {\n  id          String   @id @default(cuid())\n  userId      String\n  title       String\n  ingredients String\n  instruction String\n  vegan       Boolean\n  calorie     Int?\n  tags        String\n  date        DateTime @default(now())\n}\n\nmodel Chat {\n  id      String   @id @default(cuid())\n  userId  String\n  title   String\n  content String\n  date    DateTime @default(now())\n}\n",
-  "inlineSchemaHash": "089e7ceb4a164e71e29ee28074c0e44fdcf7028dcf7db07bc644d97b27a0635f",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"./generated/client\"\n}\n\ndatasource db {\n  provider  = \"postgresql\"\n  url       = env(\"POSTGRES_PRISMA_URL\")\n  directUrl = env(\"POSTGRES_URL_NON_POOLING\")\n}\n\nmodel recipe {\n  id          String   @id @default(cuid())\n  userId      String\n  title       String\n  ingredients String\n  instruction String\n  vegan       Boolean\n  calorie     Int?\n  tags        String\n  date        DateTime @default(now())\n}\n\nmodel Chat {\n  id      String   @id @default(cuid())\n  userId  String\n  title   String\n  content String\n  date    DateTime @default(now())\n}\n",
+  "inlineSchemaHash": "7be8c8add32c1ea1ec693dfc7f08f7d60b155ffe1ecbb3ffa68f0308d09433e8",
   "copyEngine": true
 }
 config.dirname = '/'
