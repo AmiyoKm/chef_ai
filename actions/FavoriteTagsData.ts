@@ -2,7 +2,9 @@
 
 import prisma from "@/lib/prisma"
 import { auth } from "@clerk/nextjs/server"
-
+type recipe = {
+    tag : string
+}
 export async function FavoriteTagsData(){
     const {userId} = await auth()
         if(!userId){
@@ -23,7 +25,7 @@ export async function FavoriteTagsData(){
             allTagCounts : 0
         }
     }
-    const allTags = recipes.flatMap(recipe => recipe.tags.split(", "))
+    const allTags = recipes.flatMap((recipe : {tags :string}) => recipe.tags.split(", "))
 
     const tagsCount : Record<string , number> = allTags.reduce((acc ,tag)=> {
         acc[tag] = (acc[tag] || 0) +1
