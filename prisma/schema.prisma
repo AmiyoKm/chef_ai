@@ -15,15 +15,18 @@ model recipe {
   userId      String
   title       String
   ingredients String
-  Instruction String
+  instruction String
   vegan       Boolean
   calorie     Int?
-  tags        recipeTag[]
+  tags        String 
+  date        DateTime @default(now())
 }
 
-model recipeTag {
-  id      String @id @default(cuid())
-  name    String
-  recipeId   String
-  recipe    recipe @relation(fields: [recipeId] , references: [id])
+model Chat {
+  id           String @id @default(cuid())
+  userId       String
+  title        String
+  content      String
+  date        DateTime @default(now())
+  
 }

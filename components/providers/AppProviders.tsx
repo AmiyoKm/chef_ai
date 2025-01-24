@@ -5,9 +5,10 @@ import DesktopSidebar from '../DesktopSidebar'
 import {QueryClient , QueryClientProvider} from "@tanstack/react-query"
 import NextTopLoader from 'nextjs-toploader'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { ThemeProvider } from '../theme-provider'
 const  AppProviders = ({children}: {children : ReactNode}) => {
   const [client] = useState(new QueryClient())
-  const defaultOpen = false
+  const defaultOpen = true
   return (
   
 
@@ -15,8 +16,15 @@ const  AppProviders = ({children}: {children : ReactNode}) => {
       <NextTopLoader color="#50C878" height={5} showSpinner={false}  />
     <SidebarProvider defaultOpen={defaultOpen}>
     <DesktopSidebar />
-    <SidebarTrigger />
+    
+    <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
         {children}
+        </ThemeProvider>
          <ReactQueryDevtools initialIsOpen={false} /> 
     </SidebarProvider>
     </QueryClientProvider>

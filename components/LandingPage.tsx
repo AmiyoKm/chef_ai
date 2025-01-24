@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
 import Logo from "./Logo";
+import Link from "next/link";
 
 const Hero12 = () => {
   return (
@@ -23,7 +24,7 @@ const Hero12 = () => {
               </p>
             </div>
             <div className="mt-4 flex justify-center gap-2">
-              <Button>Get Started</Button>
+              <Button><Link href="/chef-ai">Get Started</Link></Button>
               <Button variant="outline">
                 Learn more <ExternalLink className="ml-2 h-4" />
               </Button>

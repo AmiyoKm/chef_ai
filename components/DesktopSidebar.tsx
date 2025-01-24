@@ -11,7 +11,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { Brain, History, Home, Settings2, User } from "lucide-react";
+import { Brain, Cpu, History, Home, MessageSquareCode, Settings2, User } from "lucide-react";
 import Logo from "./Logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -24,19 +24,23 @@ const items = [
   {
     title: "Chef AI",
     url: "chef-ai",
-    icon: Brain,
+    icon: Cpu,
   },
   {
     title: "History",
     url: "history",
     icon: History,
   },
+  {
+    title: "Chat",
+    url: "chat",
+    icon: MessageSquareCode,
+  },
 ];
 
 const DesktopSidebar = () => {
   const pathName = usePathname();
   const currentUrl = pathName.split("/");
-  console.log(currentUrl);
 
   return (
     <Sidebar>

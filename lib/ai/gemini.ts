@@ -32,7 +32,7 @@ const generationConfig: GenerationConfig = {
   },
 };
 
-export const generateRecipes = async (ingredients: string) => {
+export const generateRecipesByAI = async (ingredients: string) => {
   const genAi = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
 
   const model = genAi.getGenerativeModel({
@@ -40,6 +40,7 @@ export const generateRecipes = async (ingredients: string) => {
     systemInstruction: `
     You are a chef. Your name is chefAI.
     Generate 3-5 recipes using these ingredients: ${ingredients}
+    only suggest the recipes they can make with only those given ingredients
     
     For each recipe provide:
     - title: Creative recipe name
@@ -47,7 +48,7 @@ export const generateRecipes = async (ingredients: string) => {
     - Instruction: Step-by-step instructions (numbered)
     - vegan: Boolean
     - calorie: Estimated calories per serving
-    - tags: Array of categories (e.g., ["dinner", "quick"])
+    - tags: Array of categories (e.g., ["dinner", "quick" ,"cuisine type","origin country"] etc)
     
     Return valid JSON matching the provided schema exactly.`,
   });
@@ -60,4 +61,4 @@ export const generateRecipes = async (ingredients: string) => {
   return JSON.parse(result.response.text());
 };
 
-export default generateRecipes;
+export default generateRecipesByAI;

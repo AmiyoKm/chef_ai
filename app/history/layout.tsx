@@ -16,7 +16,7 @@ const layout = ({children}: {children : ReactNode}) => {
                     </SignedIn>
                 </div>
             </header>
-            <div className=''>
+            <div className='overflow-auto'>
                 <div className='flex-1 container py-4 text-accent-foreground'>
                     {children}
                 </div>
