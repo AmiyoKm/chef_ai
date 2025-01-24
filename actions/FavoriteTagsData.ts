@@ -3,8 +3,11 @@
 import prisma from "@/lib/prisma"
 import { auth } from "@clerk/nextjs/server"
 type recipe = {
-    tag : string
+    tags : string
 }
+type acc= Record<string, number>
+
+
 export async function FavoriteTagsData(){
     const {userId} = await auth()
         if(!userId){
@@ -25,9 +28,9 @@ export async function FavoriteTagsData(){
             allTagCounts : 0
         }
     }
-    const allTags = recipes.flatMap((recipe : {tags :string}) => recipe.tags.split(", "))
+    const allTags = recipes.flatMap((recipe : recipe) => recipe.tags.split(", "))
 
-    const tagsCount : Record<string , number> = allTags.reduce((acc ,tag)=> {
+    const tagsCount : Record<string , number> = allTags.reduce((acc: acc ,tag)=> {
         acc[tag] = (acc[tag] || 0) +1
         return acc
     },{} as Record<string , number>)
@@ -36,7 +39,7 @@ export async function FavoriteTagsData(){
 
     return {
         mostFrequentTag: sortedTags[0], 
-        allTagCounts: Object.entries(tagsCount).reduce((acc,tag)=> acc+tag[1] ,0)
+        allTagCounts: Object.entries(tagsCount).reduce((acc ,tag)=> acc+tag[1] ,0)
     }
 
 }
