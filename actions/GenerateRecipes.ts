@@ -3,7 +3,7 @@
 import generateRecipesByAI from "@/lib/ai/gemini"
 import prisma from "@/lib/prisma"
 import { auth } from "@clerk/nextjs/server"
-import { recipe } from "@prisma/generated/client"
+import { recipe } from "@/prisma/generated/client"
 
 export async function GenerateRecipes(input : string){
     const {userId} = await auth()
