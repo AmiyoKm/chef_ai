@@ -1,9 +1,16 @@
 "use server"
 
 import generateRecipesByAI from "@/lib/ai/gemini"
-import prisma from "@/lib/prisma"
+import {prisma} from "@/lib/prisma"
 import { auth } from "@clerk/nextjs/server"
-import { recipe } from "@/prisma/generated/client"
+type recipe ={
+    title : string
+    ingredients : string
+    Instruction: string
+    vegan: boolean
+    calorie: number
+    tags: string[]
+}
 
 export async function GenerateRecipes(input: string) {
     const { userId } = await auth()
@@ -13,7 +20,7 @@ export async function GenerateRecipes(input: string) {
 
     const response = await generateRecipesByAI(input)
 
-    const recipes: recipe[] = response.recipes.map((recipe: any) => ({
+    const recipes = response.recipes.map((recipe: recipe) => ({
         userId,
         title: recipe.title,
         ingredients: recipe.ingredients,
