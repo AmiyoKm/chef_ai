@@ -12,14 +12,3 @@ CREATE TABLE "recipe" (
 
     CONSTRAINT "recipe_pkey" PRIMARY KEY ("id")
 );
-
--- CreateTable
-CREATE TABLE "Chat" (
-    "id" TEXT NOT NULL,
-    "userId" TEXT NOT NULL,
-    "title" TEXT NOT NULL,
-    "content" TEXT NOT NULL,
-    "date" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-
-    CONSTRAINT "Chat_pkey" PRIMARY KEY ("id")
-);
