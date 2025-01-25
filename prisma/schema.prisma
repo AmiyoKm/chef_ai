@@ -21,6 +21,6 @@ model recipe {
   vegan       Boolean
   calorie     Int?
   tags        String 
-  date        DateTime @default(now())
+  date        DateTime @default(now() )
 }
 
