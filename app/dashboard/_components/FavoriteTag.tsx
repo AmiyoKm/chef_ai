@@ -12,11 +12,10 @@ const FavoriteTags = () => {
         queryFn :()=> FavoriteTagsData()
     })
     
-    
   return (
     <Card className='flex-1 hover:scale-105 transition-all'>
         <CardHeader className='flex flex-row items-center justify-between' >
-            <CardTitle className='text-lg'>Favorite Tag : <span className='text-primary'>{query.data?.mostFrequentTag[0]}</span></CardTitle>
+            <CardTitle className='text-lg'>Favorite Tag : <span className='text-primary'>{query.data?.mostFrequentTag ? query.data?.mostFrequentTag[0]: "none"}</span></CardTitle>
             <Star className='w-6 h-7 stroke-yellow-500 fill-yellow-500' />
         </CardHeader>
         <CardContent>

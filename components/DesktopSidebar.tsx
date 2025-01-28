@@ -43,58 +43,55 @@ const DesktopSidebar = () => {
   const currentUrl = pathName.split("/");
 
   return (
-    <Sidebar>
-      <SidebarHeader className="p-2 flex justify-center items-center min-w-max mb-4">
-        <div className="w-max flex justify-center mx-auto">
-          <Logo />
-        </div>
+    <Sidebar className="dark:bg-gray-900 text-white h-full bg-gray-50 shadow-lg">
+      <SidebarHeader className="p-6 flex justify-center items-center mb-8">
+      <div className="w-max flex justify-center mx-auto">
+        <Logo />
+      </div>
       </SidebarHeader>
       <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupContent>
-            <SidebarMenu className="gap-2">
-              {items.map((item, i) => (
-                <SidebarMenuItem
-                  key={i}
-                  className={`${
-                    currentUrl[1] === item.url
-                      ? "bg-gradient-to-r from-emerald-600 to-emerald-400 shadow-lg"
-                      : "bg-muted-foreground/15 hover:bg-muted-foreground/25"
-                  } rounded-xl w-full h-12 transition-all duration-300 ease-in-out transform hover:scale-105 cursor-pointer`}
-                >
-                  <SidebarMenuButton
-                    asChild
-                    className="h-full w-full flex gap-6"
-                  >
-                    <Link href={`/${item.url}`} className="min-w-full">
-                      <div className="flex items-center">
-                        <item.icon
-                          size={25}
-                          className={`${
-                            currentUrl[1] !== item.url
-                              ? "stroke-black/50"
-                              : "stroke-white"
-                          } transition-colors duration-300`}
-                        />
-                      </div>
-                      <span
-                        className={`${
-                          currentUrl[1] !== item.url
-                            ? "text-black text-xl"
-                            : "text-white text-xl"
-                        } transition-colors duration-300`}
-                      >
-                        {item.title}
-                      </span>
-                    </Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
+      <SidebarGroup>
+        <SidebarGroupContent>
+        <SidebarMenu className="gap-3">
+          {items.map((item, i) => (
+          <SidebarMenuItem
+            key={i}
+            className={`${
+            currentUrl[1] === item.url
+              ? "bg-gradient-to-r from-emerald-600 to-emerald-400 shadow-md"
+              : "dark:bg-gray-800 hover:bg-gradient-to-r from-emerald-600 to-emerald-400 shadow-md bg-gray-100"
+            } rounded-lg w-full h-12 transition-all duration-300 ease-in-out transform hover:scale-105 cursor-pointer`}
+          >
+            <SidebarMenuButton asChild className="h-full w-full flex gap-3">
+            <Link href={`/${item.url}`} className="min-w-full flex items-center px-4">
+              <item.icon
+              size={24}
+              className={`${
+                currentUrl[1] !== item.url ? "stroke-gray-400 hover:stroke-white" : "stroke-white"
+              } transition-colors duration-300`}
+              />
+              <span
+              className={`${
+                currentUrl[1] !== item.url
+                ? "text-gray-900 text-base hover:text-white dark:text-white"
+                : "text-white text-base"
+              } transition-colors duration-300 ml-3`}
+              >
+              {item.title}
+              </span>
+            </Link>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+          ))}
+        </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
       </SidebarContent>
-      <SidebarFooter></SidebarFooter>
+      <SidebarFooter className="p-6">
+      <div className="text-center text-gray-500 text-sm">
+        © 2025 Chef AI
+      </div>
+      </SidebarFooter>
     </Sidebar>
   );
 };
