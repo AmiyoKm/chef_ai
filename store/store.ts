@@ -1,4 +1,4 @@
-import { recipe } from "@/prisma/generated/client"
+import { recipe } from "@prisma/client"
 import {create } from "zustand"
 
 type Message = {

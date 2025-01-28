@@ -3,11 +3,10 @@ import { GetAllRecipe } from '@/actions/GetAllRecipe'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { recipe } from '@/prisma/generated/client'
 import { useQuery } from '@tanstack/react-query'
 import { Bolt, Flame, Utensils } from 'lucide-react'
 import React from 'react'
-
+import {recipe} from "@prisma/client"
 const RecipeHistory = () => {
     const query =   useQuery({
         queryKey :["recipe History"],
